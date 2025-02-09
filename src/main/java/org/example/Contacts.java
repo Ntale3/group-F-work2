@@ -11,7 +11,7 @@ public class Contacts {
     JPanel northPanel,southPanel,westPanel,centerPanel,formPanel,newPanel,listPanel;
     JTextField field,field2,field3;
     String text,text2,text3;
-    JButton saveButton,cancelButton;
+    JButton saveButton,cancelButton,addButton,viewButton,backToListButton,deleteButton;
     JTable contactList;
     CardLayout cardLayout = new CardLayout();
 
@@ -213,46 +213,46 @@ public class Contacts {
     }
 
     public JButton backToList(){
-        saveButton=new JButton("Back To List");
-        saveButton.setBackground(new Color(60,179,113));
-        saveButton.setForeground(Color.white);
-        saveButton.setFocusPainted(false);
-        saveButton.setPreferredSize(new Dimension(100,50));
-        saveButton.addActionListener(e -> {
+        backToListButton=new JButton("Back To List");
+        backToListButton.setBackground(new Color(60,179,113));
+        backToListButton.setForeground(Color.white);
+        backToListButton.setFocusPainted(false);
+        backToListButton.setPreferredSize(new Dimension(100,50));
+        backToListButton.addActionListener(e -> {
             cardLayout.first(centerPanel);
         });
         return saveButton;
     }
     public JButton delete(){
-        cancelButton=new JButton("Delete");
-        cancelButton.setBackground(new Color(140,17,11));
-        cancelButton.setForeground(Color.white);
-        cancelButton.setFocusPainted(false);
-        cancelButton.setPreferredSize(new Dimension(100,50));
-        cancelButton.addActionListener(e -> {
+        deleteButton=new JButton("Delete");
+        deleteButton.setBackground(new Color(140,17,11));
+        deleteButton.setForeground(Color.white);
+        deleteButton.setFocusPainted(false);
+        deleteButton.setPreferredSize(new Dimension(100,50));
+        deleteButton.addActionListener(e -> {
             cardLayout.previous(centerPanel);
         });
         return cancelButton;
     }
 
     public JButton viewDetails(){
-        saveButton=new JButton("View Details");
-        saveButton.setBackground(new Color(60,179,113));
-        saveButton.setForeground(Color.white);
-        saveButton.setFocusPainted(false);
-        saveButton.setPreferredSize(new Dimension(100,50));
-        saveButton.addActionListener(e -> {
+        viewButton=new JButton("View Details");
+        viewButton.setBackground(new Color(60,179,113));
+        viewButton.setForeground(Color.white);
+        viewButton.setFocusPainted(false);
+        viewButton.setPreferredSize(new Dimension(100,50));
+        viewButton.addActionListener(e -> {
             cardLayout.previous(centerPanel);
         });
         return saveButton;
     }
     public JButton addNewContact(){
-        cancelButton=new JButton("Add New Contact");
-        cancelButton.setBackground(new Color(140,17,11));
-        cancelButton.setForeground(Color.white);
-        cancelButton.setFocusPainted(false);
-        cancelButton.setPreferredSize(new Dimension(100,50));
-        cancelButton.addActionListener(e -> {
+        addButton=new JButton("Add New Contact");
+        addButton.setBackground(new Color(140,17,11));
+        addButton.setForeground(Color.white);
+        addButton.setFocusPainted(false);
+        addButton.setPreferredSize(new Dimension(100,50));
+        addButton.addActionListener(e -> {
             cardLayout.next(centerPanel);
         });
         return cancelButton;
